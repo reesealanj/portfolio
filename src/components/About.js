@@ -26,7 +26,7 @@ export default function About() {
             .catch(console.error);
     }, []);
 
-    if (!author) return Loader;
+    if (!author) return <Loader />;
 
     return (
         <main className="relative">
