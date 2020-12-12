@@ -14,7 +14,7 @@ export default function Home() {
                     <h1 className="text-6xl text-white font-bold fancy leading-none text-center mb-4 lg:leading-snug home-name">
                         Hello, I'm Reese.
                     </h1>
-                    <p className="text-lg text-white font-bold fancy text-center">
+                    <p className="text-2xl text-white font-bold fancy text-center">
                         I'm a Computer Science Senior who likes to build things
                         using code. Check out my random thoughts or my projects,
                         and reach out if you'd like to work with me.
