@@ -36,7 +36,7 @@ export default function SinglePost() {
             .catch(console.error);
     }, [slug]);
 
-    if (!singlePost) return Loader;
+    if (!singlePost) return <Loader />;
 
     return (
         <main className="bg-gray-200 min-h-screen p-12">

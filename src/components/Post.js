@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import sanityClient from "../client.js";
 import { Link } from "react-router-dom";
+import Loader from "./Loading";
 
 export default function Post() {
     const [postData, setPost] = useState(null);
@@ -23,8 +24,11 @@ export default function Post() {
             .then((data) => setPost(data))
             .catch(console.error);
     }, []);
+
+    if (!postData) return <Loader />;
+
     return (
-        <main className="bg-green-100 min-h-screen p-12">
+        <main className="bg-gray-200 min-h-screen p-12">
             <section className="container mx-auto">
                 <h1 className="text-5xl flex justify-center fancy mb-5">
                     Blog Posts
