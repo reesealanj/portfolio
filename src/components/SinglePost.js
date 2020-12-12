@@ -3,6 +3,7 @@ import sanityClient from "../client.js";
 import { NavLink, useParams } from "react-router-dom";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
+import Loader from "./Loading";
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -35,7 +36,7 @@ export default function SinglePost() {
             .catch(console.error);
     }, [slug]);
 
-    if (!singlePost) return <div>Loading ...</div>;
+    if (!singlePost) return Loader;
 
     return (
         <main className="bg-gray-200 min-h-screen p-12">

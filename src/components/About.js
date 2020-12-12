@@ -3,6 +3,7 @@ import sanityClient from "../client.js";
 import forest from "../assets/img/forest.jpg";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
+import Loader from "./Loading";
 
 const builder = imageUrlBuilder(sanityClient);
 function urlFor(source) {
@@ -25,7 +26,7 @@ export default function About() {
             .catch(console.error);
     }, []);
 
-    if (!author) return <div>Loading...</div>;
+    if (!author) return Loader;
 
     return (
         <main className="relative">
