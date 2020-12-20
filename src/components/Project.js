@@ -27,15 +27,15 @@ export default function Project() {
     return (
         <main className="bg-gray-200 min-h-screen p-12">
             <section className="container mx-auto">
-                <h1 className="text-5xl flex justify-center fancy">
+                <h1 className="text-5xl flex justify-center fancy mb-5">
                     My Projects
                 </h1>
-                <h2 className="text-lg  flex justify-center mb-12">
+                <h2 className="text-lg text-gray-600 flex justify-center mb-12">
                     These are my projects and previous work
                 </h2>
                 <section className="grid grid-cols-2 gap-8">
-                    {projectData &&
-                        projectData.map((project, index) => (
+                    {
+                    projectData && projectData.map((project, index) => (
                             <article className="relative rounded-lg shadow-xl bg-white p-16">
                                 <h3 className="text-gray-800 text-3xl font-bold mb-2 hover:text-red-700">
                                     <a
@@ -78,7 +78,27 @@ export default function Project() {
                                         >
                                             👉
                                         </span>
+                                    
+                                    
                                     </a>
+                                    {(project.github) ? (<a
+                                        href={project.github}
+                                        rel="noopener noreferrer"
+                                        target="_blank"
+                                        className="text-red-500 font-bold text-l hover:underline hover:text-red-400"
+                                    >
+                                        View the Source Code{" "}
+                                        <span
+                                            role="img"
+                                            aria-label="right pointer"
+                                        >
+                                            👉
+                                        </span>
+                                    
+                                    
+                                    </a>) : (<a></a>)}
+                            
+                            
                                 </div>
                             </article>
                         ))}

@@ -27,7 +27,7 @@ export default function About() {
     }, []);
 
     if (!author) return <Loader />;
-
+     
     return (
         <main className="relative">
             <img
